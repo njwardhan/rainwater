@@ -11,7 +11,7 @@
 }
 
 .body {
-  background-image: url("./Backgrounds/01.jpg");
+  background-image: url("./backgrounds/01.jpg");
   background-size: cover;
   background-position: center;
   position:fixed;
@@ -77,7 +77,7 @@
 }
 
 .Ecosystem, .Community, .Contact, .FAQ {
-  background-image: url("./Backgrounds/02.jpg");
+  background-image: url("./backgrounds/02.jpg");
   background-size: cover;
   background-position: center;
   position:fixed;
