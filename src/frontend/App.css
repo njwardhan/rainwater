@@ -2,26 +2,34 @@
   text-align: center;
 }
 
+.Navibar {
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom:0;
+}
+
 .body {
-  /* background-color: rgb(42, 41, 41); */
-  background-image: url("./background.jpg");
+  background-image: url("./Backgrounds/01.jpg");
   background-size: cover;
   background-position: center;
-  position:absolute;
+  position:fixed;
   height:100vh;
   top:0px;
   right:0px;
   bottom:0px;
   left:0px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: top;
   align-items: top;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .App-name {
-  color: rgb(220, 211, 211);
+  color: rgb(196, 191, 191);
   font-family: "Times New Roman", Times, serif;
   font-weight: bold;
   font-size: calc(70px + 3vmin);
@@ -29,7 +37,7 @@
   flex-direction: column;
   text-align: center;
   justify-content: center; */
-  top:520px;
+  top:540px;
   left:70px;
   position: absolute;
   animation-name: app-name-load;
@@ -38,16 +46,22 @@
   animation-delay: 40ms;
   animation-fill-mode: forwards;
   transform: scale(0);
+  /* border-style: solid;
+  border-color: red; */
 }
 
 .App-description {
-  color: rgb(255, 255, 255);
+  color: rgb(254, 254, 254);
   display: flex;
   flex-direction: row;
   text-align: center;
-  top:570px;
+  /* justify-content: center; */
+  position: absolute;
+  top:720px;
   left:70px;
   position: relative;
+  /* border-style: solid;
+  border-color: red; */
 }
 
 @keyframes app-name-load {
@@ -60,4 +74,22 @@
   100% { 
     transform: scale(1);
   }  
+}
+
+.Ecosystem, .Community, .Contact, .FAQ {
+  background-image: url("./Backgrounds/02.jpg");
+  background-size: cover;
+  background-position: center;
+  position:fixed;
+  height:100vh;
+  top:0px;
+  right:0px;
+  bottom:0px;
+  left:0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: top;
+  align-items: top;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }

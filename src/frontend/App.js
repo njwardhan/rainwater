@@ -1,15 +1,26 @@
 import './App.css';
-import background from './background.jpg';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import Home from './pages';
+import Community from './pages/community';
+import Contact from './pages/contact';
+import Ecosystem from './pages/ecosystem';
+import Faq from './pages/faq';
+import App_Launch from './pages/launch-app';
 
 function App() {
   return (
     <BrowserRouter>
-      <div className='body'>
-        <Navbar />
-        <h1 className='App-name'>RainWater</h1>
-        <h2 className='App-description'>A fully decentralized social media protocol, backed by IPFS and smart contracts.</h2>
+      <div className="Navibar">
+        {window.location.pathname != "/launch-app" && <Navbar />}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/ecosystem" element={<Ecosystem />} />
+          <Route path="/community" element={<Community />} />
+          <Route path="/faq" element={<Faq />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/launch-app" element={<App_Launch />} />
+        </Routes>
       </div>
     </BrowserRouter>
   );

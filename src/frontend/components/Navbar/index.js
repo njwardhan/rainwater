@@ -21,13 +21,13 @@ const Navbar = () => {
 
             <NavMenu>
                 <NavLink 
-                  to="/"
+                  to="/ecosystem"
                   activeStyle={{ color:'black' }}
                 >
                     Ecosystem
                 </NavLink>
                 <NavLink 
-                  to="/about"
+                  to="/community"
                   activeStyle={{ color: 'black' }}
                 >
                     Community
@@ -36,16 +36,18 @@ const Navbar = () => {
                   to="/contact" 
                   activeStyle={{ color: 'black' }}
                 >
-                    FAQ
-                </NavLink>
-                <NavLink
-                  to="/signin"
-                  activeStyle={{ color: 'black' }}
-                >
                     Contact
                 </NavLink>
+                <NavLink
+                  to="/faq"
+                  activeStyle={{ color: 'black' }}
+                >
+                    FAQ
+                </NavLink>
                 <NavBtn>
-                    <NavBtnLink to="/sign-up">Launch App</NavBtnLink>
+                    <NavBtnLink to="/launch-app" target="_blank">
+                        Launch App
+                    </NavBtnLink>
                 </NavBtn>
             </NavMenu>
            </Nav> 
