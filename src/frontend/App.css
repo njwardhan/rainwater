@@ -106,29 +106,6 @@
   left:0px;
 }
 
-.Top-bar {
-  height: 60px;
-  display: flex;
-  color: white;
-  /* border-style: solid;
-  border-color: red; */
-  flex-direction: row;
-  /* flex-wrap: wrap; */
-  justify-content: space-around;
-  align-items: center;
-}
-
-.App-name-2 {
-  cursor: pointer;
-  font-weight: bold;
-  /* left: 10px; */
-}
-
-.Wallet-button {
-  cursor: pointer;
-  font-size: large;
-}
-
 .Upload {
   display: flex;
   flex-direction: column;
@@ -136,7 +113,7 @@
   align-items: center;
   /* border-style: solid;
   border-color: red; */
-  height: 150px;
+  height: 220px;
 }
 
 .Image-upload {

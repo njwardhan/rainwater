@@ -1,6 +1,7 @@
 import './App.css';
 import { BrowserRouter, Routes, Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import App_Navbar from "./components/App_Navbar";
 import Home from './pages';
 import Community from './pages/community';
 import Contact from './pages/contact';
@@ -13,6 +14,7 @@ function App() {
     <BrowserRouter>
       <div className="Navibar">
         {window.location.pathname != "/launch-app" && <Navbar />}
+        {window.location.pathname == "/launch-app" && <App_Navbar />}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/ecosystem" element={<Ecosystem />} />
