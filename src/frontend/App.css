@@ -106,16 +106,21 @@
   left:0px;
 }
 
-.Upload {
+.Uploader {
+  background-color: rgb(114, 112, 112);
+  border-style: solid;
+  border-color: black;
+  position: absolute;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  /* border-style: solid;
-  border-color: red; */
-  height: 220px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 1.5%;
 }
 
-.Image-upload {
-  color:white;
+.items {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
 }

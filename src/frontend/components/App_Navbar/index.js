@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { NavItem } from "react-bootstrap";
 // import logo from "./logo.jpg";
 import {
     Nav,
@@ -10,10 +9,6 @@ import {
     NavBtn,
     NavBtnLink,
 } from "./NavbarElements";
-
-function refreshPage() {
-    window.location.reload(false);
-}
 
 const Navbar = () => {
     // const [walletAddress, setWalletAddress] = useState("");
@@ -55,7 +50,6 @@ const Navbar = () => {
 			})
 			.catch(error => {
 				setErrorMessage(error.message);
-			
 			});
 
 		} else {
@@ -73,10 +67,16 @@ const Navbar = () => {
 		// reload the page to avoid any errors with chain change mid use of application
 		window.location.reload();
 	}
+    // Handle the chainID change here
+    // console.log(window.ethereum.networkVersion, 'window.ethereum.networkVersion');
 
     // listen for account changes
-	window.ethereum.on('accountsChanged', accountChangedHandler);
-	window.ethereum.on('chainChanged', chainChangedHandler);
+    if (window.ethereum && window.ethereum.isMetaMask) {
+    	window.ethereum.on('accountsChanged', accountChangedHandler);
+	    window.ethereum.on('chainChanged', chainChangedHandler);
+    }
+    else
+        window.stop("Please install MetaMask browser extension to interact")
 
     return (
         <>
@@ -86,6 +86,8 @@ const Navbar = () => {
                 <img src={logo} alt="logo" height="60" width="100"/>
             </NavLogo> */}
             <Bars />
+            
+            <div style={{color: "red"}}>{errorMessage}</div>
 
             <NavMenu>
                 <NavBtn>

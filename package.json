@@ -3,11 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@pinata/sdk": "^1.1.26",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^0.27.2",
     "bootstrap": "^5.2.1",
+    "buffer": "^6.0.3",
     "components": "^0.1.0",
+    "dotenv": "^16.0.2",
+    "identicon.js": "^2.3.3",
     "react": "^18.2.0",
     "react-bootstrap": "^2.5.0",
     "react-dom": "^18.2.0",
@@ -41,6 +46,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^1.0.2",
