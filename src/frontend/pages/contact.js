@@ -1,5 +1,7 @@
+import { Helmet } from 'react-helmet';
+
 const Contact = () => {
-    document.title = 'Contact | RainWater Protocol';
+    // document.title = 'Contact | RainWater Protocol';
     return (
         <div
             className="Contact"
@@ -11,6 +13,9 @@ const Contact = () => {
                 color:'white'
             }}
         >
+            <Helmet>
+              <title>Contacts | RainWater Protocol</title>
+            </Helmet>
            <h1>Contact Us</h1> 
         </div>
     );

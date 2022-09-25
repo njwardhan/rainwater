@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // import logo from "./logo.jpg";
 import {
     Nav,
@@ -37,16 +37,17 @@ const Navbar = () => {
     //     } else {
     //         console.log("Metamask not found")
     //     }
-    // }
+    // // }
 
     const connectWalletHandler = () => {
 		if (window.ethereum && window.ethereum.isMetaMask) {
 			console.log('MetaMask Here!');
 
 			window.ethereum.request({ method: 'eth_requestAccounts'})
-			.then(result => {
+			.then(result => {   
 				accountChangedHandler(result[0]);
 				setConnButtonText('Wallet Connected!');
+                // window.localStorage.setItem("rainwater-local-buttontxt", JSON.stringify('Wallet Connected!'))
 			})
 			.catch(error => {
 				setErrorMessage(error.message);
@@ -54,21 +55,33 @@ const Navbar = () => {
 
 		} else {
 			console.log('Need to install MetaMask');
-			setErrorMessage('Please install MetaMask browser extension to interact');
+			setErrorMessage('No wallet found :(');
+            window.alert("Please install the MetaMask browser extension to interact.")
 		}
 	}
 
     // update account, will cause component re-render
 	const accountChangedHandler = (newAccount) => {
-		setDefaultAccount(newAccount);
+        setDefaultAccount(newAccount);
+        // window.localStorage.setItem("rainwater-local-address", JSON.stringify(newAccount));
 	}
 
-    const chainChangedHandler = () => {
-		// reload the page to avoid any errors with chain change mid use of application
-		window.location.reload();
-	}
+    // useEffect(() => {
+    //     const acc = window.localStorage.getItem("rainwater-local-address");
+    //     setDefaultAccount(JSON.parse(acc));
+    //     // if(defaultAccount != null) {
+    //     //     const txt = window.localStorage.getItem("rainwater-local-buttontxt");
+    //     //     setConnButtonText(JSON.parse(txt));
+    //     // }
+    //     // else
+    //     //     setConnButtonText('Connect Wallet')
+    // });
+
     // Handle the chainID change here
     // console.log(window.ethereum.networkVersion, 'window.ethereum.networkVersion');
+    const chainChangedHandler = () => {
+        window.location.reload();
+	}
 
     // listen for account changes
     if (window.ethereum && window.ethereum.isMetaMask) {

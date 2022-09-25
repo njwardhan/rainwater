@@ -4,17 +4,14 @@ import RainWaterAddress from '../contractsData/rainwater-address.json';
 import axios from 'axios';
 import Identicon from 'identicon.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Helmet } from 'react-helmet';
 const FormData = require('form-data');
 const { ethers } = require("ethers");
 
-document.title = 'App | RainWater Protocol';
-
-function refreshPage() {
-  window.location.reload(false);
-}
+// document.title = 'App | RainWater Protocol';
 
 class Launch_App extends Component {
-  async componentWillMount() {
+  async componentDidMount() {
     await this.loadContract();
   }
 
@@ -22,7 +19,10 @@ class Launch_App extends Component {
     console.log("contract loaded")
     const provider = new ethers.providers.Web3Provider(window.ethereum)
     await provider.send("eth_requestAccounts", []);
-    const signer = provider.getSigner()
+    const { chainId } = await provider.getNetwork()
+    // console.log(chainId);
+    // console.log(window.ethereum.networkVersion)
+    const signer = provider.getSigner();
     // console.log(await signer.getAddress());
     const acc = await signer.getAddress();
     this.setState({ account: acc });
@@ -30,7 +30,7 @@ class Launch_App extends Component {
     this.setState({ rainwater: contract });
     // console.log(contract.address);
     const count = await contract.functions.imageCount();
-    console.log(parseInt(count))
+    // console.log(parseInt(count));
 
     // Load Images
     let copy = [];
@@ -61,7 +61,7 @@ class Launch_App extends Component {
     const url = "https://api.pinata.cloud/pinning/pinFileToIPFS";
     const formData = new FormData();
     formData.append("file", this.state.buffer);
-    console.log(description)
+    console.log("Image Description:", description)
 
     return axios.post(
       url,
@@ -77,13 +77,13 @@ class Launch_App extends Component {
       }
     ).then(async response => {
       // Response handled
-      console.log(response);
+      // console.log(response);
       console.log(response.data.IpfsHash);
       this.setState({ loading: true });
       const hope = await this.state.rainwater.functions.uploadImage(response.data.IpfsHash, description);
       console.log(hope)
       this.setState({ loading: false });
-      refreshPage();
+      window.location.reload();
     }).catch(function (error) {
       // Error handled
       console.log(error)
@@ -95,6 +95,7 @@ class Launch_App extends Component {
     this.setState({ loading: true });
     await this.state.rainwater.functions.tipImageAuthor(id, { value: ethers.utils.parseEther(tipAmount) });
     this.setState({ loading: false });
+    window.location.reload();
   }
 
 
@@ -114,6 +115,9 @@ class Launch_App extends Component {
   render() {
     return (
       <div className="columns">
+        <Helmet>
+          <title>App | RainWater Protocol</title>
+        </Helmet>
         <div className="column">
           <div className="Uploader">
             {this.state.loading
