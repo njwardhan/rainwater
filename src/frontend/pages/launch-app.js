@@ -16,7 +16,7 @@ class Launch_App extends Component {
   }
 
   async loadContract() {
-    console.log("contract loaded")
+    // console.log("contract loaded")
     const provider = new ethers.providers.Web3Provider(window.ethereum)
     await provider.send("eth_requestAccounts", []);
     const { chainId } = await provider.getNetwork()
@@ -78,7 +78,7 @@ class Launch_App extends Component {
     ).then(async response => {
       // Response handled
       // console.log(response);
-      console.log(response.data.IpfsHash);
+      console.log('Retrieved IPFS hash:', response.data.IpfsHash);
       this.setState({ loading: true });
       const hope = await this.state.rainwater.functions.uploadImage(response.data.IpfsHash, description);
       console.log(hope)

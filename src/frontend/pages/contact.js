@@ -16,7 +16,7 @@ const Contact = () => {
             <Helmet>
               <title>Contacts | RainWater Protocol</title>
             </Helmet>
-           <h1>Contact Us</h1> 
+           <h2>“A man may die, nations may rise and fall, but an idea lives on.” ~ John F. Kennedy“</h2> 
         </div>
     );
 };

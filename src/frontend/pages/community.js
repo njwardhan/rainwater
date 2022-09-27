@@ -16,7 +16,7 @@ const Community = () => {
             <Helmet>
               <title>Community | RainWater Protocol</title>
             </Helmet>
-            <h1>Community</h1>
+            <h2>"50,000 people used to live here, now it is a ghost town.” ~ Cpt. MacMillan</h2>
         </div>
     );
 };

@@ -16,7 +16,7 @@ const Ecosystem = () => {
             <Helmet>
               <title>Ecosystem | RainWater Protocol</title>
             </Helmet>
-            <h1>Ecosystem</h1>
+            <h2>"In war, truth is the first casualty." ~ Aeschylus</h2>
         </div>
     );
 };

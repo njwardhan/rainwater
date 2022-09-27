@@ -16,7 +16,7 @@ const Faq = () => {
             <Helmet>
               <title>FAQ | RainWater Protocol</title>
             </Helmet> 
-            <h1>FAQ</h1>
+            <h2>“If you win, you need not have to explain... If you lose, you should not be there to explain!” ~ Adolf Hitler</h2>
         </div>
     );
 };
