@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Routes, Route, Switch } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import App_Navbar from "./components/App_Navbar";
 import Home from './pages';
@@ -11,20 +11,18 @@ import App_Launch from './pages/launch-app';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="Navibar">
-        {window.location.pathname != "/launch-app" && <Navbar />}
-        {window.location.pathname == "/launch-app" && <App_Navbar />}
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/ecosystem" element={<Ecosystem />} />
-          <Route path="/community" element={<Community />} />
-          <Route path="/faq" element={<Faq />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/launch-app" element={<App_Launch />} />
+          <Route path="/" element={<><Home /><Navbar /></>} />
+          <Route path="/ecosystem" element={<><Ecosystem /><Navbar /></>} />
+          <Route path="/community" element={<><Community /><Navbar /></>} />
+          <Route path="/faq" element={<><Faq /><Navbar /></>} />
+          <Route path="/contact" element={<><Contact /><Navbar /></>} />
+          <Route path="/launch-app" element={<><App_Navbar /><App_Launch /></>} />
         </Routes>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
