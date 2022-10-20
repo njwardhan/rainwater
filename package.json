@@ -1,6 +1,7 @@
 {
   "name": "rainwater",
   "version": "0.1.0",
+  "homepage": "https://njwardhan.github.io/rainwater/",
   "private": true,
   "dependencies": {
     "@pinata/sdk": "^1.1.26",
@@ -25,6 +26,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -55,6 +58,7 @@
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^1.0.2",
+    "gh-pages": "^4.0.0",
     "hardhat": "^2.11.1"
   }
 }
