@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/rainwater/static/css/main.0aeae801.css",
+    "main.js": "/rainwater/static/js/main.a060109e.js",
+    "static/media/01.jpg": "/rainwater/static/media/01.6d5ab8bd66b01bb92c67.jpg",
+    "static/media/02.jpg": "/rainwater/static/media/02.6c93ea64f19a14c0d0b0.jpg",
+    "index.html": "/rainwater/index.html",
+    "main.0aeae801.css.map": "/rainwater/static/css/main.0aeae801.css.map",
+    "main.a060109e.js.map": "/rainwater/static/js/main.a060109e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0aeae801.css",
+    "static/js/main.a060109e.js"
+  ]
+}
